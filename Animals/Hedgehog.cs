@@ -13,7 +13,7 @@ namespace PolymorphismExercise.Animals
 
         public override string Stats()
         {
-            return $"{base.Stats}, NrOfSpikes: {NrOfSpikes}";
+            return $"{base.Stats()}, NrOfSpikes: {NrOfSpikes}";
         }
     }
 }

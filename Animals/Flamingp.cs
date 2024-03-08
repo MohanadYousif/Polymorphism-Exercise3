@@ -6,7 +6,7 @@
 
         public override string Stats()
         {
-            return $"{base.Stats}, Color: {Color}";
+            return $"{base.Stats()}, Color: {Color}";
         }
     }
 

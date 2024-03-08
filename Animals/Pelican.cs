@@ -6,7 +6,7 @@
 
         public override string Stats()
         {
-            return $"{base.Stats}, Migratory: {IsMigratory}";
+            return $"{base.Stats()}, Migratory: {IsMigratory}";
         }
     }
 

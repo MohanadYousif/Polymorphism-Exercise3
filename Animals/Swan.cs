@@ -6,7 +6,7 @@
 
         public override string Stats()
         {
-            return $"{base.Stats}, Protected: {IsProtected}";
+            return $"{base.Stats()}, Protected: {IsProtected}";
         }
     }
 }

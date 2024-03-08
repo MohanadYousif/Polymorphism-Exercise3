@@ -9,6 +9,17 @@ namespace PolymorphismExercise
         private double height;
         private double weight;
 
+         public Person(){
+        }
+
+        public Person(int age, string fName, string lName, double height, double weight){
+            this.age = age;
+            this.fName = fName;
+            this.lName = lName;
+            this.height = height;
+            this.weight = weight;
+        }
+
         public int Age
         {
             get { return age; }

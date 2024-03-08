@@ -13,7 +13,7 @@ namespace PolymorphismExercise.Animals
 
         public override string Stats()
         {
-            return $"{base.Stats}, Is Poisonous: {IsPoisonous}";
+            return $"{base.Stats()}, Is Poisonous: {IsPoisonous}";
         }
     }
 }

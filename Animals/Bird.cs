@@ -11,7 +11,7 @@ namespace PolymorphismExercise.Animals
         }
         public override string Stats()
         {
-            return $"{base.Stats}, WingSpan: {WingSpan}";
+            return $"{base.Stats()}, WingSpan: {WingSpan}";
         }
     }
 }
