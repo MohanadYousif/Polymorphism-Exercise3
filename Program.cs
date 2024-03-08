@@ -26,7 +26,7 @@ namespace PolymorphismExercise
             persons = handler.AddNewPerson(person);
             persons.ForEach(p => Console.WriteLine(p.FName + " " + p.LName));
 
-            Person person1 = new Person(10, "Mattias", "plsson", 165, 75.0);
+            Person person1 = new Person(10, "Mattias", "Olsson", 165, 75.0);
             Person findPerson = handler.FindPerson(person1);
             Console.WriteLine(Object.ReferenceEquals(findPerson, null) ? "\nNothing to show.\n" : "\nWe found " + findPerson.FName + "\n");
 
