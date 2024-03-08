@@ -17,28 +17,39 @@ namespace PolymorphismExercise
 
             PersonHandler handler = new PersonHandler();
             Person person = handler.CreatePerson(25, "John", "Doe", 180, 75);
-            Console.WriteLine(person.FName);
+            Console.WriteLine("The new person is " + person.FName + "\n");
 
             List<Person> persons = handler.FindAllPersons();
             persons.ForEach(p => Console.WriteLine(p.FName + " " + p.LName));
+            Console.Write("\n");
 
             persons = handler.AddNewPerson(person);
             persons.ForEach(p => Console.WriteLine(p.FName + " " + p.LName));
 
-            person = handler.FindPerson(new Person(10, "Mattias", "Olsson", 165, 75.0));
-            Console.WriteLine(person.FName);
-            
-            // 3.2 Polymorfism
-            //List<UserError> errors = new List<UserError>
-            //{
-            //    new NumericInputError(),
-            //    new TextInputError()
-            //};
+            Person person1 = new Person(10, "Mattias", "plsson", 165, 75.0);
+            Person findPerson = handler.FindPerson(person1);
+            Console.WriteLine(Object.ReferenceEquals(findPerson, null) ? "\nNothing to show.\n" : "\nWe found " + findPerson.FName + "\n");
 
-            //foreach (var error in errors)
-            //{
-            //    Console.WriteLine(error.UEMessage());
-            //}
+            Person person2 = new Person(10, "Mohanad", "Yousif", 179.8, 125.0);
+            Person UPerson = handler.UpdatePerson(person2, 0, "Muhannad", "Aziz", 185, 80);
+            Console.WriteLine($"befor update: {person2.Age}, {person2.FName}, {person2.LName}, {person2.Height}, {person2.Weight}");
+            Console.WriteLine($"after update: {UPerson.Age}, {UPerson.FName}, {UPerson.LName}, {UPerson.Height}, {UPerson.Weight}\n");
+
+            handler.RemovePeron(person);
+            findPerson = handler.FindPerson(person);
+            Console.WriteLine(Object.ReferenceEquals(findPerson, null) ? "\nRemoved successfully\n" : "\nWe found " + findPerson.FName + "\n");
+
+            //3.2 Polymorfism
+            List<UserError> errors = new List<UserError>
+            {
+                new NumericInputError(),
+                new TextInputError()
+            };
+
+            foreach (var error in errors)
+            {
+                Console.WriteLine(error.UEMessage());
+            }
 
             // 3.3 Arv
             List<Animal> animals = new List<Animal>

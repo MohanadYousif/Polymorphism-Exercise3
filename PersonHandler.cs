@@ -29,7 +29,8 @@ namespace PolymorphismExercise
             };
             return persons;
         }
-        internal List<Person> AddNewPerson(Person person){
+        internal List<Person> AddNewPerson(Person person)
+        {
             List<Person> personList = new PersonHandler().FindAllPersons();
             personList.Add(person);
             return personList;
@@ -37,38 +38,20 @@ namespace PolymorphismExercise
 
         internal Person FindPerson(Person person)
         {
-            return new PersonHandler().FindAllPersons().Find(p => p.Equals(person));
-        }        
+            return new PersonHandler().FindAllPersons().Find(p => p.Age.Equals(person.Age) && p.FName.Equals(person.FName) && p.LName.Equals(person.LName)
+                     && p.Height.Equals(person.Height) && p.Weight.Equals(person.Weight));
+        }
 
-        internal Person UpdatePerson(Person person, int? age, string fName, string lName, double? height, double? weight)
+        internal Person UpdatePerson(Person person, int age, string fName, string lName, double height, double weight)
         {
             Person updatePerson = new PersonHandler().FindPerson(person);
 
-            if (age.HasValue)
-            {
-                updatePerson.Age = (int)age;
-            }
+            updatePerson.FName = fName;
+            updatePerson.LName = lName;
+            if (age > 0) updatePerson.Age = age;
+            if (height > 0) updatePerson.Height = height;
+            if (weight > 0) updatePerson.Weight = weight;
 
-            if (!String.IsNullOrEmpty(fName) || !String.IsNullOrWhiteSpace(fName))
-            {
-                updatePerson.FName = fName;
-            }
-
-            if (!String.IsNullOrEmpty(lName) || !String.IsNullOrWhiteSpace(lName))
-            {
-                updatePerson.LName = lName;
-            }
-
-            if (height.HasValue)
-            {
-                updatePerson.Height = (double)height;
-            }
-
-            if (weight.HasValue)
-            {
-                updatePerson.Weight = (double)weight;
-            }
-            
             return updatePerson;
         }
 
