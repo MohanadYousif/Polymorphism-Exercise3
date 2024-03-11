@@ -7,7 +7,7 @@ namespace PolymorphismExercise
     {
         public void Talk()
         {
-            Console.WriteLine("I'm a Wolfman");
+            Console.WriteLine("I'm a Wolfman\n");
         }
     }
 }

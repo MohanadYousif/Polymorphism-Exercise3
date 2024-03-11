@@ -4,7 +4,7 @@ namespace PolymorphismExercise.Animals
 {
     internal class Horse : Animal
     {
-        public string Breed { get; set; }
+        public string MaxSpeed { get; set; }
         public override void DoSound()
         {
             Console.WriteLine("The horse neighs");
@@ -12,7 +12,7 @@ namespace PolymorphismExercise.Animals
 
         public override string Stats()
         {
-            return $"{base.Stats()}, Breed: {Breed}";
+            return $"{base.Stats()}, Max Speed: {MaxSpeed}";
         }
     }
 }

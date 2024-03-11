@@ -13,5 +13,9 @@ namespace PolymorphismExercise.Animals
         {
             return $"{base.Stats()}, Breed: {Breed}";
         }
+        public string CustomMethod()
+        {
+            return "hello from dog's class";
+        }
     }
 }
