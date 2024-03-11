@@ -117,7 +117,7 @@ namespace PolymorphismExercise
 
             //  16. Nej, klassen Animal kan inte direkt komma åt några metoder eller egenskaper i klassen Dog.
             //  17. Arv tillåter underklasser (som Dog) att komma åt medlemmar (egenskaper, metoder)
-            //      i deras basklass (Animal), men inte vice versa. Basklassen (Animal) har ingen kunskap
+            //      i deras basklass (Animal), men inte tvärtom. Basklassen (Animal) har ingen kunskap
             //      om sina underklassers specifika medlemmar eller metoder.
 
             // 18. Genom att casta Animal class till Dog kan vi få tillgång till CustomMethod, men det rekommenderas inte
